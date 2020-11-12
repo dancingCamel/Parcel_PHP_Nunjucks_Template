@@ -1,0 +1,35 @@
+{
+  "name": "scoutvoucher",
+  "version": "1.0.0",
+  "description": "An app to issue and redeem gift vouchers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel src/pages/index.njk && bash copy_dist_to_apache_root.sh",
+    "build": "parcel build src/pages/index.njk && bash copy_dist_to_apache_root.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nunjucks": "^3.2.2",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-nunjucks": "^2.2.2",
+    "parcel-plugin-shell": "^1.0.0",
+    "parcel-plugin-static-files-copy": "^2.5.0",
+    "sass": "^1.28.0"
+  },
+  "staticFiles": {
+    "staticPath": "static",
+    "watcherGlob": "**"
+  },
+  "shell": {
+    "onBuildStart": [
+      "echo Starting Build"
+    ],
+    "onBuildExit": [
+      "bash copy_dist_to_apache_root.sh"
+    ],
+    "dev": false,
+    "safe": false
+  }
+}

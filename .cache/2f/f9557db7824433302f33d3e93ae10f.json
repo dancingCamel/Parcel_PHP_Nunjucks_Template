@@ -1,0 +1,1 @@
+{"id":"index.html","dependencies":[],"generated":{"html":"{% extends 'base.njk' %} {% block content %}\n\n<h1>Some content at the top</h1>\n<h1>A Title</h1>\n<p>Some code</p>\n<footer>Some footer content</footer>\n{% endblock %}\n"},"sourceMaps":null,"error":null,"hash":"42205d6faa519d96ff836fc536a59894","cacheData":{}}

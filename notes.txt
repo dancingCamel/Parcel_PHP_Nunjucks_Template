@@ -1,0 +1,36 @@
+install nunjucks and parcel-plugin-nunjucks
+
+PHP files saved as static files and use "parcel-plugin-static-files-copy" package to move across to dist folder. create static folder in root and have php folder in here
+Put composer in static folder root
+
+Auto copy dist folder to apache root with module.hot statement in main.js and bash script (copy_dist_to_apache_root.sh)
+Use parcel-plugin-shell: npm i parcel-plugin-shell -D
+
+Bash script runs when building, too
+
+
+Install composer with:
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+
+Check sha with
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'c31c1e292ad7be5f49291169c0ac8f683499edddcfd4e42232982d0fd193004208a58ff6f353fde0012d35fdd72bc394') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+but replace the hash with most up-to-date sha (https://composer.github.io/pubkeys.html)
+
+Install composer locally
+php composer-setup.php
+
+Once complete, remove the installer
+php -r "unlink('composer-setup.php');"
+
+Test the installation
+composer
+
+add composer vendor file to .gitignore
+
+create composer.json file (empty for now)
+
+run to generate the composer.lock file
+php composer.phar install 
+
+
+Push the dist folder to heroku with: git subtree push --prefix dist heroku master (from git root folder)
