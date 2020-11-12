@@ -1,0 +1,1 @@
+This repo contains a file structure and dependency list that allows a user to Parcel bundler with Nunjucks templating and a PHP API backend. You must run this in a linux environment and have PHP and Apache installed.
